@@ -1,0 +1,5 @@
+@extends('layouts.library')
+@section('title', 'Atur Ulang Kata Sandi')
+@section('content')
+<section class="auth-section wrap"><div class="auth-art"><div class="eyebrow eyebrow-light"><span></span> SELANGKAH LAGI</div><h1>Kata sandi baru,<br>awal cerita <em>baru.</em></h1><p>Buat kata sandi yang kuat agar akun dan aktivitas membacamu tetap aman.</p></div><div class="auth-form"><div class="eyebrow"><span></span> BUAT KATA SANDI BARU</div><h2>Atur ulang akun.</h2><form method="post" action="{{ route('password.update') }}">@csrf<input type="hidden" name="token" value="{{ $token }}"><label>Email akun<input name="email" type="email" value="{{ old('email', $email) }}" required autocomplete="email"></label><label>Kata sandi baru<input name="password" type="password" required minlength="8" autocomplete="new-password" placeholder="Minimal 8 karakter"></label><label>Ulangi kata sandi<input name="password_confirmation" type="password" required minlength="8" autocomplete="new-password" placeholder="Ketik kembali"></label><button class="button button-navy" type="submit">Simpan kata sandi <span>→</span></button></form></div></section>
+@endsection
